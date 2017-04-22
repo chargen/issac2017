@@ -558,7 +558,7 @@ For each $i > 1$ let $v_i$ be the first standard basis vector $e_j$ that is
 linearly independent of $W_1 + W_2 + \cdots + W_{i-1}$. Set
 $W_i = K(V, v_i)$. 
 
-By construction, $V = W_1 + W_2 + \cdots + W_n$, and the minimum polynomial
+By construction, $V = W_1 + W_2 + \cdots + W_n$, and the minimal polynomial
 of $M$ is the least common multiple of the minimal polynomials $m_i$ of
 $M$ restricted to the $W_i$.
 
@@ -581,7 +581,7 @@ standard basis vector which is independent of the Krylov subspaces computed
 so far. As each new Krylov subspace is computed, we append the corresponding
 vectors to the matrix $B$, and reduce them.
 
-It is also possible to define the minimum polynomial of a matrix $M$ over
+It is also possible to define the minimal polynomial of a matrix $M$ over
 $\mathbb{Z}$. This is due to the fact that the null ideal of a matrix $M$ over
 an integrally closed domain $D$ is principal (see \cite{brown}).
 
@@ -620,7 +620,7 @@ We obtain a better termination criterion by allowing a small amount of
 information to 'leak' from the modulo~$p$ minimal polynomial computations.
 Namely, for one of the (nondegenerate) primes $p$, we record which standard
 basis vectors $v_i$ were used to generate the Krylov subspaces $W_i$ when
-computing the minimum polynomial of $M_{(p)}$. Recall that
+computing the minimal polynomial of $M_{(p)}$. Recall that
 $V = W_1 + W_2 + \cdots + W_n$, where $M_{(p)}$ is thought of as a linear
 operator on $V$.
 
@@ -630,7 +630,7 @@ $\mathbb{Q}$, it is clear that $V' = W'_1 + W'_2 + \cdots + W'_n$.
 
 Thus, if $m(T)$ is believed to be the minimal polynomial of $M$,
 e.g.\ because the Chinese remaindering has stabilised, then if $m(M)v'_i = 0$
-for all $i$, then $m(T)$ is the minimum polynomial of $M$ over $\mathbb{Q}$.
+for all $i$, then $m(T)$ is the minimal polynomial of $M$ over $\mathbb{Q}$.
 This follows because if $m(M)v'_i = 0$ then $m(M)$ annihilates all of $W'_i$,
 and hence all of $V'$.
 
@@ -797,7 +797,7 @@ ideal can be generated using only two elements, one of which can be chosen
 at random in the ideal. This representation is efficient in terms of space compared to storing a
 $\ZZ$-basis. However, the key problem is the lack of
 efficient algorithms for working with two generators. We remark that one
-operation is always efficient using two generators: powering of ideals.
+operation was always efficient using two generators: powering of ideals.
 
 A refinement of this idea, due to Pohst and Zassenhaus \cite[p. 400]{Pohst1997}, is a 
 \textit{normal} presentation. Here a finite set $S$ of prime numbers
@@ -813,7 +813,7 @@ degree $n$ and $\mathcal O_K$ be its ring of integers.
 \begin{definition}
 Let $S$ be a finite set of prime numbers and $A$ a nonzero ideal such that
 all primes $p$ dividing the norm $N(A) = |\mathcal O_K/A|$ are in $S$.
-A tuple $(a, \alpha)$ is an $S$-normal presentation for $A$ if and only if
+A tuple $(a, \alpha)$ is a $S$-normal presentation for $A$ if and only if
 \begin{itemize}
 \setlength{\itemsep}{1pt}
 \setlength{\parskip}{0pt}
@@ -831,12 +831,12 @@ The algorithmic importance comes from the following result.
 \begin{theorem}
 Let $A = \langle a, \alpha \rangle$ be an ideal in $S$-normal presentation. Then the following hold:
 \begin{enumerate}
-\item We have $N(A) = \gcd(a^n, N(\alpha))$.
+\item We have $N(A) = \gcd(a^n, N(\alpha))$
 \item If $B = \langle b, \beta\rangle$ is a second ideal in $S$-normal
 presentation for the same set $S$, then
 $AB = \langle ab, \alpha\beta\rangle$ is also a $S$-normal presentation.
 \item Let $\gamma = 1/\alpha$, $\langle g\rangle = \alpha \mathcal O_K \cap \ZZ$,
- $g = g_1g_2$ with coprime $g_1$, $g_2$ and $g_2$ only divisible by primes not in $S$. Then $A^{-1} = \langle 1, g_2\gamma\rangle$ is an $S$-normal presentation.
+ $g = g_1g_2$ with coprime $g_1$, $g_2$ and $g_2$ only divisible be primes not in $S$. Then $A^{-1} = \langle 1, g_2\gamma\rangle$ is a $S$-normal presentation.
 \item If $p$ is a prime number and $P= \langle p, \theta\rangle$ a prime ideal over $p$
 in $\{p\}$-normal presentation, then the $\{p\}$-normal presentation
 of $P^{-1} = \langle 1, \gamma\rangle$ yields a valuation element, that is,
@@ -849,14 +849,14 @@ in $\{p\}$-normal presentation. The key problem in using the theorem for
 multiplication is that both ideals need to be given by an $S$-normal presentation for
 the same set $S$, which traditionally is achieved by recomputing
 a suitable presentation from scratch, taking random candidates for the
-second generator until it works. Based on the following lemma, we have developed a new algorithm that manages it at the cost 
+second generator until it works. Based on the following lemma, have developed a new algorithm that manages it at the cost 
 of a few integer operations only.
 
 \begin{lemma}
 Let $S$ be a finite set of prime numbers and $A=\langle a, \alpha\rangle$ an ideal in
 $S$-normal presentation. Let $T$ be a second set of primes and set
 $s = \prod_{x\in S} x$ as well as $t = \prod_{x\in T\setminus S} x$. If $1 = \gcd(as, t) = uas + vt$,
-then $\langle a, \beta \rangle$ is an $S\cup T$-normal presentation, where $\beta = vt\alpha + uas$.
+then $\langle a, \beta \rangle$ is a $S\cup T$-normal presentation, where $\beta = vt\alpha + uas$.
 \end{lemma}
 
 \begin{proof}
@@ -1049,9 +1049,9 @@ Since the radii of the balls tend to $0$, by Lemma~\ref{lem:tor} the algorithm w
 For a number field $K$ and $s \in \CC$, $\operatorname{Re}(s) > 1$, the Dedekind zeta function of $K$ is defined as
 \[ \zeta_K(s) = \sum_{\{0\} \neq I \subseteq \mathcal O_K} \frac 1 {N(I)^s}, \]
 where the sum is over all nonzero ideals of the ring of integers $\mathcal O_K$ of $K$.
-This function has an analytic continuation to the whole complex plane with a simple pole at $s = 1$. The celebrated analytic class number formula
+This function has an analytic continuation to the whole complex plane with a simple pole at $1$. The celebrated analytic class number formula
 (see~\cite{Cohen1993}) states that the residue at that pole encodes important arithmetic data of $K$:
-\[ \operatorname{Res}(\zeta_K, 1) =\lim_{s \to 1}(s - 1)\zeta_K(s) = h_K \cdot \mathrm{reg}_K \cdot c_K, \]
+\[ \operatorname{res}(\zeta_K, 1) =\lim_{s \to 1}(s - 1)\zeta_K(s) = h_K \cdot \mathrm{reg}_K \cdot c_K, \]
 where $h_K$ is the class number, $\mathrm{reg}_K$ is the regulator and $c_K$ is another (easy to determine) constant depending on $K$.
 
 As well as being an intriguing theoretical result, it is also an important tool during class group computations.
@@ -1064,14 +1064,14 @@ Since the aim is to illustrate the use of ball arithmetic, we will not give deta
 
 \begin{theorem}[Belabas-Friedmann]
 There exist functions $g_K$, $\varepsilon_K \colon \RR \to \RR$, with
-\[ \lvert \log(\operatorname{Res}(\zeta_K, 1)) - g_K(x) \rvert \leq \varepsilon_K(x) \]
+\[ \lvert \log(\operatorname{res}(\zeta_K, 1)) - g_K(x) \rvert \leq \varepsilon_K(x) \]
 for all $x \geq 69$. The evaluation of $g_K(x)$ involves only prime powers $p^m \leq x$ and prime ideal powers $\mathfrak p^m$ with
 $N(\mathfrak p^m) \leq x$. Moreover the function $\varepsilon_K$ is strictly decreasing and depends only on the degree and the
 discriminant of $K$.
 \end{theorem}
 
 Assume that $\varepsilon > 0$ and we want to find $z \in \RR$ such that
-\[ \lvert \log(\operatorname{Res}(\zeta_K, 1)) - z \rvert \leq \varepsilon.\]
+\[ \lvert \log(\operatorname{res}(\zeta_K, 1)) - z \rvert \leq \varepsilon.\]
 We first compute an $x_0$ such that $\varepsilon_K(x_0) < \varepsilon/2$. Note that since $\varepsilon_K$ is strictly decreasing,
 this can be done using ordinary floating point arithmetic with appropriate rounding modes.
 Once we have this value we compute a real ball $B$ with $g_K(x_0) \in B$ and $\operatorname{diam}(B) \leq \varepsilon/2$ (as usual
